@@ -1,0 +1,63 @@
+The game they are playing is Minecraft. The human and the agent are working together to build a house in this game. Each event's description in the history holds true until the next event.
+
+The robot maintains a hierarchical policy. A low-level policy determines the robot’s action, and a high-level policy determines the robot’s inference of the human’s action (which the low-level policy is conditioned upon). Both components of the hierarchical policy are decision tree-based policies of depth two and with four leaf nodes. The robot’s high-level policy stays fixed throughout gameplay and is displayed in Figure 9. The robot’s low-level policy changes throughout gameplay across five phases of play, correlating with different periods of the task (i.e., building different portions of the house). Across all policies, the robot has the ability to:
+
+- Chop Birch Wood
+- Chop Jungle Wood
+- Mine Andesite Stone
+- Mine Cobblestone
+- Put resources in chest
+- Craft pickaxe
+- Craft axe
+- Craft sticks
+- Craft planks
+
+The robot’s behavior loop is to observe the human behavior and perform inference of the human’s action. Following the inference of the human’s behavior, the robot determines its action based on the current tree-based low-level policy. Once the action has been completed, the robot will deposit its excess resources into the chest and begin the loop again.
+
+The robot deposits any materials that have a quantity above two into the chest for the human to use for building/crafting and any tools with a quantity above one into the chest. The robot’s movement policy (contained within each macro-action) is to move in a straight-line path towards the object. If the agent meets an obstacle and/or takes longer than 9 seconds to reach its goal, the robot will teleport to the object. For “Chop" or “Mine" actions, the robot will perform the chopping/mining action until each block of the target has disappeared (detected using Line of Sight variables). The human teammate is notified in advance that the robot can teleport if it is having trouble reaching its destination and that the robot will place extra resources into the chest for the human to retrieve.
+
+During the following phases, the robot performs the behavior described based on these conditions:
+
+Phase 1:
+- Craft an axe if the human is chopping wood and the amount of wood held by the robot and the chest is at least 5
+- Chop birch wood if the human is chopping wood and the amount of wood held by the robot and the chest is less than 5
+- Craft a pickaxe if the human is not chopping wood and the amount of wood held by the robot and the chest is at least 5
+- Chop birch wood if the human is not chopping wood and the amount of wood held by the robot and the chest is less than 5
+
+Phase 2:
+- Craft birch planks if the human is crafting and the amount of wood held by the robot and the chest is at least 4
+- Chop jungle wood if the human is crafting and the amount of wood held by the robot and the chest is less than 4
+- Craft a pickaxe if the human is not crafting and the amount of wood held by the robot and the chest is at least 4
+- Chop birch wood if the human is not crafting and the amount of wood held by the robot and the chest is less than 4
+
+During Phase 3:
+- Craft a pickaxe if the amount of wood held by the robot and the chest is at least 5 and the human is mining
+- Chop jungle wood if the amount of wood held by the robot and the chest is at least 5 and the human is not mining
+- Mine andesite stone if the amount of wood held by the robot and the chest is less than 5 and the robot has a pickaxe
+- Chop jungle wood if the amount of wood held by the robot and the chest is less than 5 and the robot does not have a pickaxe
+
+During Phase 4:
+- Mine andesite stone if the robot has a pickaxe and the amount of andesite at the house is less than or equal to 10
+- Mine cobblestone if the robot has a pickaxe and the amount of andesite at the house is greater than 10
+- Chop jungle wood if the robot does not have a pickaxe and the human is chopping
+- Chop birch wood if the robot does not have a pickaxe and the human is not chopping
+
+During Phase 5:
+- Mine cobblestone if the human is crafting and the robot has a pickaxe
+- Chop jungle wood if the human is crafting and the robot does not have a pickaxe
+- Craft sticks if the human is not crafting and the amount of wood held by the robot and the chest is at least 5
+- Chop jungle wood if the human is not crafting and the amount of wood held by the robot and the chest is less than 5
+
+The policy for human behavior inference is as follows:
+- The human is crafting if the human is near the house and the crafting table
+- The human is building if the human is near the house not near the crafting table
+- The human is mining if the human is not near the house and not near stone
+- The human is chopping if the human is not near the house and not near stone
+
+
+When answering questions about the robot's actions, break down your answer into phases of what the robot perceived, what it knows about the plan, and what it executed as a result of its knowledge. Do this explicitly in a list, such as:
+- Robot perceived: X
+- Robot knew: X
+- Robot executed: X
+
+If you are answering other questions, such as about time or placements, feel free to structure your answer as needed.

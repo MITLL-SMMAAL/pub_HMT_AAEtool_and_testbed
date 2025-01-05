@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mcraft.fun Embed</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const McraftEmbed = () => {
+            const [iframeHeight, setIframeHeight] = React.useState('100vh');
+            const videoRef = React.useRef(null);
+            let mediaRecorder;
+
+            React.useEffect(() => {
+                const updateHeight = () => {
+                    const viewportHeight = window.innerHeight;
+                    setIframeHeight(`${viewportHeight}px`);
+                };
+
+                updateHeight();
+                window.addEventListener('resize', updateHeight);
+
+                // Automatically start recording when the page loads
+                startRecording();
+
+                return () => window.removeEventListener('resize', updateHeight);
+            }, []);
+
+            const startRecording = async () => {
+                try {
+                    const stream = await navigator.mediaDevices.getDisplayMedia({
+                        video: { cursor: "always" }, // Always show the cursor
+                        audio: false // Set to true if you want to record audio
+                    });
+
+                    const chunks = [];
+                    mediaRecorder = new MediaRecorder(stream, { mimeType: "video/webm" });
+
+                    mediaRecorder.ondataavailable = (event) => {
+                        if (event.data.size > 0) {
+                            chunks.push(event.data);
+                        }
+                    };
+
+                    mediaRecorder.onstop = () => {
+                        // Combine recorded chunks into a Blob
+                        const videoBlob = new Blob(chunks, { type: "video/webm" });
+
+                        // Automatically download the recording
+                        const url = URL.createObjectURL(videoBlob);
+                        const a = document.createElement("a");
+                        a.style.display = "none";
+                        a.href = url;
+                        a.download = "recording.webm"; // Default file name
+                        document.body.appendChild(a);
+                        a.click();
+                        document.body.removeChild(a);
+
+                        // Optional: Set up video playback
+                        videoRef.current.src = url;
+                        videoRef.current.style.display = "block";
+
+                        // Redirect to the loading page
+                        window.location.href = "/loading.html";
+                    };
+
+                    stream.getVideoTracks()[0].onended = () => {
+                        if (mediaRecorder.state === "recording") {
+                            mediaRecorder.stop();
+                        }
+                    };
+
+                    mediaRecorder.start();
+                } catch (error) {
+                    console.error("Error starting screen recording:", error);
+                }
+            };
+
+            return (
+                <div className="flex flex-col h-screen bg-gray-100">
+                    <div className="flex-grow relative">
+                        <iframe
+                            src="https://mcraft.fun"
+                            style={{ height: iframeHeight, width: '100%' }}
+                            className="border-0"
+                            title="mcraft.fun client"
+                        />
+                    </div>
+                    <div className="p-2">
+                        <video ref={videoRef} controls style={{ display: 'none', width: '100%', marginTop: '10px' }} />
+                    </div>
+                </div>
+            );
+        };
+
+        ReactDOM.render(
+            <McraftEmbed />,
+            document.getElementById('root')
+        );
+    </script>
+</body>
+</html>

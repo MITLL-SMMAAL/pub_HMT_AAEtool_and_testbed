@@ -1,0 +1,261 @@
+Event 0 (12 Second): 
+Determination of Human Action:
+Is human near house: Yes
+Is human near crafting table: No
+Inferred Action: Human is Building
+
+Robot Action:
+Is human chopping wood: No
+is total wood greater or equal to 5: No
+Action: Chop Birch Wood
+
+Event 1 (54 Second):
+Determination of Human Action:
+Is human near house: No
+Is human near stone: No
+Inferred Action: Human is Chopping
+
+Robot Action:
+Is human chopping wood: Yes
+is total wood greater or equal to 5: No
+Action: Chop Birch Wood
+
+Event 2 (95 Second):
+Determination of Human Action:
+Is human near house: No
+Is human near stone: No
+Inferred Action: Human is Chopping
+
+Robot Action:
+is total wood greater or equal to 5: Yes
+is human mining: No
+Action: Chop Jungle Wood
+
+
+
+
+Event 3 (127 Second):
+Determination of Human Action:
+Is human near house: No
+Is human near stone: Yes
+Inferred Action: Human is Mining
+
+Robot Action:
+Does robot have pickaxe: No
+is human chopping: No
+Action: Chop Birch Wood
+
+
+
+
+Event 4 (127 Second):
+Determination of Human Action:
+Is human near house: No
+Is human near stone: Yes
+Inferred Action: Human is Mining
+
+Robot Action:
+Does robot have pickaxe: No
+is human chopping: No
+Action: Chop Birch Wood
+
+
+
+Event 5 (170 Second):
+Determination of Human Action:
+Is human near house: No
+Is human near stone: Yes
+Inferred Action: Human is Mining
+
+Robot Action:
+Does robot have pickaxe: No
+is human chopping: No
+Action: Chop Birch Wood
+
+
+Event 6 (212 Second):
+Determination of Human Action:
+Is human near house: No
+Is human near stone: Yes
+Inferred Action: Human is Mining
+
+Robot Action:
+Is human crafting: No
+is total wood greater or equal to 5: Yes
+Action: Craft Sticks
+
+
+Event 7 (224 Second):
+Determination of Human Action:
+Is human near house: Yes
+Is human near crafting table: Yes
+Inferred Action: Human is crafting
+
+Robot Action:
+Is human crafting: Yes
+Does robot have pickaxe: No
+Action: Chop Jungle Wood
+
+
+
+Event 8 (259 Second):
+Determination of Human Action:
+Is human near house: Yes
+Is human near crafting table: Yes
+Inferred Action: Human is crafting
+
+Robot Action:
+Is human crafting: Yes
+Does robot have pickaxe: No
+Action: Chop Jungle Wood
+
+
+
+Event 9 (300 Second):
+Determination of Human Action:
+Is human near house: Yes
+Is human near crafting table: Yes
+Inferred Action: Human is crafting
+
+Robot Action:
+Is human crafting: Yes
+Does robot have pickaxe: No
+Action: Chop Jungle Wood
+
+
+Event 10 (344 Second):
+Determination of Human Action:
+Is human near house: No
+Is human near stone: Yes
+Inferred Action: Human is mining
+
+Robot Action:
+Is human crafting: No
+is total wood greater or equal to 5: Yes
+Action: Craft Sticks
+
+
+
+Event 11 (360 Second):
+Determination of Human Action:
+Is human near house: No
+Is human near stone: Yes
+Inferred Action: Human is mining
+
+Robot Action:
+Is human crafting: No
+is total wood greater or equal to 5: Yes
+Action: Craft Sticks
+
+
+Event 12 (390 Second):
+Determination of Human Action:
+Is human near house: Yes
+Is human near crafting table: Yes
+Inferred Action: Human is crafting
+
+Robot Action:
+Is human crafting: Yes
+Does robot have pickaxe: No
+Action: Chop Jungle Wood
+
+
+Event 13 (428 Second):
+Determination of Human Action:
+Is human near house: Yes
+Is human near crafting table: No
+Inferred Action: Human is building
+
+Robot Action:
+Is human crafting: No
+is total wood greater or equal to 5: Yes
+Action: Craft Sticks
+
+
+
+
+
+
+Event 14 (442 Second):
+Determination of Human Action:
+Is human near house: Yes
+Is human near crafting table: Yes
+Inferred Action: Human is crafting
+
+Robot Action:
+Is human crafting: Yes
+Does robot have pickaxe: No
+Action: Chop Jungle Wood
+
+
+
+
+Event 15 (482 Second):
+Determination of Human Action:
+Is human near house: Yes
+Is human near crafting table: Yes
+Inferred Action: Human is crafting
+
+Robot Action:
+Is human crafting: Yes
+Does robot have pickaxe: Yes
+Action: Mine cobblestone
+
+
+
+
+Event 16 (517 Second):
+Determination of Human Action:
+Is human near house: Yes
+Is human near crafting table: Yes
+Inferred Action: Human is crafting
+
+Robot Action:
+Is human crafting: Yes
+Does robot have pickaxe: Yes
+Action: Mine cobblestone
+
+
+
+
+Event 17 (543 Second):
+Determination of Human Action:
+Is human near house: Yes
+Is human near crafting table: No
+Inferred Action: Human is building
+
+Robot Action:
+Is human crafting: No
+is total wood greater or equal to 5: Yes
+Action: Craft Sticks
+
+
+
+
+Event 18 (557 Second):
+Determination of Human Action:
+Is human near house: Yes
+Is human near crafting table: No
+Inferred Action: Human is building
+
+Robot Action:
+Is human crafting: No
+is total wood greater or equal to 5: Yes
+Action: Craft Sticks
+
+
+Event 19 (570 Second):
+Determination of Human Action:
+Is human near house: Yes
+Is human near crafting table: Yes
+Inferred Action: Human is crafting
+
+Robot Action:
+Is human crafting: Yes
+Does robot have pickaxe: Yes
+Action: Mine cobblestone
+
+
+
+
+

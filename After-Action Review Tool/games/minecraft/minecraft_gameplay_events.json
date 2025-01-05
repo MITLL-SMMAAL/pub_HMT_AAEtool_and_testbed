@@ -1,0 +1,197 @@
+[
+    {
+        "timestamp": 12,
+        "actions": {
+            "human": {
+                "near_house": true,
+                "near_crafting_table": false,
+                "inferred_action": "building"
+            },
+            "robot": {
+                "chopping_wood": false,
+                "total_wood_greater_or_equal_5": false,
+                "action": "chop birch wood"
+            }
+        }
+    },
+    {
+        "timestamp": 54,
+        "actions": {
+            "human": {
+                "near_house": false,
+                "near_stone": false,
+                "inferred_action": "chopping"
+            },
+            "robot": {
+                "chopping_wood": true,
+                "total_wood_greater_or_equal_5": false,
+                "action": "chop birch wood"
+            }
+        }
+    },
+    {
+        "timestamp": 95,
+        "actions": {
+            "human": {
+                "near_house": false,
+                "near_stone": false,
+                "inferred_action": "chopping"
+            },
+            "robot": {
+                "total_wood_greater_or_equal_5": true,
+                "human_mining": false,
+                "action": "chop jungle wood"
+            }
+        }
+    },
+    {
+        "timestamp": 127,
+        "actions": {
+            "human": {
+                "near_house": false,
+                "near_stone": true,
+                "inferred_action": "mining"
+            },
+            "robot": {
+                "have_pickaxe": false,
+                "human_chopping": false,
+                "action": "chop birch wood"
+            }
+        }
+    },
+    {
+        "timestamp": 170,
+        "actions": {
+            "human": {
+                "near_house": false,
+                "near_stone": true,
+                "inferred_action": "mining"
+            },
+            "robot": {
+                "have_pickaxe": false,
+                "human_chopping": false,
+                "action": "chop birch wood"
+            }
+        }
+    },
+    {
+        "timestamp": 212,
+        "actions": {
+            "human": {
+                "near_house": false,
+                "near_stone": true,
+                "inferred_action": "mining"
+            },
+            "robot": {
+                "total_wood_greater_or_equal_5": true,
+                "human_crafting": false,
+                "action": "craft sticks"
+            }
+        }
+    },
+    {
+        "timestamp": 224,
+        "actions": {
+            "human": {
+                "near_house": true,
+                "near_crafting_table": true,
+                "inferred_action": "crafting"
+            },
+            "robot": {
+                "human_crafting": true,
+                "have_pickaxe": false,
+                "action": "chop jungle wood"
+            }
+        }
+    },
+    {
+        "timestamp": 259,
+        "actions": {
+            "human": {
+                "near_house": true,
+                "near_crafting_table": true,
+                "inferred_action": "crafting"
+            },
+            "robot": {
+                "human_crafting": true,
+                "have_pickaxe": false,
+                "action": "chop jungle wood"
+            }
+        }
+    },
+    {
+        "timestamp": 300,
+        "actions": {
+            "human": {
+                "near_house": true,
+                "near_crafting_table": true,
+                "inferred_action": "crafting"
+            },
+            "robot": {
+                "human_crafting": true,
+                "have_pickaxe": false,
+                "action": "chop jungle wood"
+            }
+        }
+    },
+    {
+        "timestamp": 344,
+        "actions": {
+            "human": {
+                "near_house": false,
+                "near_stone": true,
+                "inferred_action": "mining"
+            },
+            "robot": {
+                "total_wood_greater_or_equal_5": true,
+                "human_crafting": false,
+                "action": "craft sticks"
+            }
+        }
+    },
+    {
+        "timestamp": 360,
+        "actions": {
+            "human": {
+                "near_house": false,
+                "near_stone": true,
+                "inferred_action": "mining"
+            },
+            "robot": {
+                "total_wood_greater_or_equal_5": true,
+                "human_crafting": false,
+                "action": "craft sticks"
+            }
+        }
+    },
+    {
+        "timestamp": 390,
+        "actions": {
+            "human": {
+                "near_house": true,
+                "near_crafting_table": true,
+                "inferred_action": "crafting"
+            },
+            "robot": {
+                "human_crafting": true,
+                "have_pickaxe": false,
+                "action": "chop jungle wood"
+            }
+        }
+    },
+    {
+        "timestamp": 428,
+        "actions": {
+            "human": {
+                "near_house": true,
+                "near_crafting_table": false,
+                "inferred_action": "building"
+            },
+            "robot": {
+                "human_crafting": false,
+                "total_wood_greater_or_equal_5": true,
+                "action": "craft sticks"
+            }
+        }
+    }
+]
